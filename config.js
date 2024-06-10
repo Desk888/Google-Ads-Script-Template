@@ -11,7 +11,7 @@ let config = {
  "\n\nReport covers the last " +
   config.DATE_RANGE +
  " days." +
- "\n\nThis is an automated email sent by Google Ads Script.";
+ "\n\nThis is an automated email sent by Google Ads Script."
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
