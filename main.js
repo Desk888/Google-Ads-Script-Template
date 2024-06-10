@@ -4,8 +4,16 @@
 // Configurations
 let config = {
     DATE_RANGE: last_n_days(30),
-    SPREADSHEET_URL: "", // Only include URL until /edit.
-    EMAIL_ADDRESSES: "" // Add email addresses
+    SPREADSHEET_URL: "", // Only include URL until /edit
+    EMAIL_ADDRESSES: "", // Add email addresses
+    EMAIL_SUBJECT: "", // Add the subject to your email
+    EMAIL_BODY: "Enter the body of your email text here +
+   config.SPREADSHEET_URL +
+   "\n\nReport covers the last " +
+   config.DATE_RANGE +
+   " days." +
+   "\n\nThis is an automated email sent by Google Ads Script.";
+
   };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,14 +98,8 @@ function checkTab(file) {
 
  // Send Email Functionality
  var recipientEmails = config.EMAIL_ADDRESSES.split(',');
- var subject = "PMAX Search Terms Report [UK]";
- var body =
-   "The PMAX Search Terms Report has been generated and is available at: " +
-   config.SPREADSHEET_URL +
-   "\n\nReport covers the last " +
-   config.DATE_RANGE +
-   " days." +
-   "\n\nThis is an automated email sent by Google Ads Script.";
+ var subject = config.EMAIL_SUBJECT;
+ var body = config.EMAIL_BODY;
 
  MailApp.sendEmail(recipientEmails.join(','), subject, body);
 
