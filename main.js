@@ -21,7 +21,6 @@ function last_n_days(n) {
   return google_date_range(to, from);
 } // function last_n_days()
 
-
 function google_date_range(from, to) {
 
   function google_format(date) {
@@ -44,7 +43,6 @@ function google_date_range(from, to) {
 
   return result.join(',');
 } // function google_date_range()
-
 
 // Sheet Creation
 function checkTab(file) {
@@ -76,7 +74,6 @@ function checkTab(file) {
 
   return tab;
 } // function checkTab
-
 
 // Send Email Functionality
 var recipientEmails = config.EMAIL_ADDRESSES.split(',');
